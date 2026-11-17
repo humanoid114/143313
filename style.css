@@ -1,11 +1,11 @@
-/* 1. Reset: remove default spacing */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. Page */
+
 body {
   font-family: "Outfit", system-ui, sans-serif;
   color: #2d3a54;
@@ -13,7 +13,6 @@ body {
   padding: 60px 20px;
 }
 
-/* 3. Section: centered box */
 .team {
   max-width: 630px;
   margin: 0 auto;
@@ -25,22 +24,19 @@ body {
   margin-bottom: 30px;
 }
 
-/* 4. THE GRID (this is what makes it responsive!)
-   repeat(auto-fit, minmax(130px, 1fr)) means:
-   "make as many columns as fit, each at least 130px wide"
-   gap: 20px (up/down)  12px (left/right) */
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 20px 12px;
 }
 
-/* 5. One person */
+
 .member img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;   /* always a square */
-  object-fit: cover;     /* crop the photo, never stretch it */
+  aspect-ratio: 1 / 1;   
+  object-fit: cover;     
   margin-bottom: 9px;
 }
 
@@ -56,8 +52,13 @@ body {
   color: #6b7a90;
 }
 
-/* 6. Blue name (hover, or add class="active" in the HTML) */
+
 .member:hover h3,
 .member.active h3 {
   color: #0a8cff;
+}
+@media (max-width: 500px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
